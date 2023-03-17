@@ -15,7 +15,11 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "LaneEnd") Reset();
+        if (other.tag == "LaneEnd") 
+        {
+            
+            Reset();
+        }
     }
 
     private void OnCollisionStay(Collision collision)
@@ -24,10 +28,9 @@ public class Ball : MonoBehaviour
     }
     public void Reset()
     {
-        transform.position = startPos;
+         transform.position = startPos;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-
         ScoreManager.instance.CheckReset();
     }
 }
