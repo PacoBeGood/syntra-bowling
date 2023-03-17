@@ -3348,30 +3348,13 @@ GameObject:
   - component: {fileID: 448231883}
   - component: {fileID: 448231882}
   - component: {fileID: 448231881}
-  - component: {fileID: 448231880}
   m_Layer: 5
   m_Name: Restart Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &448231880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448231879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0baa18fff50539e4ea2a048e7515a317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textField: {fileID: 0}
-  restartCanvas: {fileID: 0}
-  scoreText: {fileID: 0}
-  nameText: {fileID: 0}
+  m_IsActive: 0
 --- !u!114 &448231881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8404,7 +8387,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1192738545}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1433339194}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: NextScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1192738545
 MonoBehaviour:
   m_ObjectHideFlags: 0

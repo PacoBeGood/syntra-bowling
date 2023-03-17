@@ -6,6 +6,7 @@ using TMPro;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] TMP_Text textField;
+    [SerializeField] int maxLength = 12;
     string storedText = "";
     [Space]
     [SerializeField] GameObject restartCanvas;
@@ -13,6 +14,7 @@ public class InputManager : MonoBehaviour
 
     public void AddText(string text)
     {
+        if (storedText.Length >= maxLength) return;
         storedText += text;
         UpdateDisplay();
     }
