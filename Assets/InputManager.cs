@@ -7,6 +7,9 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] TMP_Text textField;
     string storedText = "";
+    [Space]
+    [SerializeField] GameObject restartCanvas;
+    [SerializeField] TMP_Text scoreText, nameText;
 
     public void AddText(string text)
     {
@@ -21,5 +24,12 @@ public class InputManager : MonoBehaviour
     private void UpdateDisplay()
     {
         textField.text = $"Name: {storedText}";
+    }
+    public void NextScreen()
+    {
+        nameText.text = $"Name: {storedText}";
+        scoreText.text = $"Score: {ScoreManager.instance.GetScore()}";
+        restartCanvas.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

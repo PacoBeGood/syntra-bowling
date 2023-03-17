@@ -10,10 +10,12 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] List<Pin> pins;
     [SerializeField] Ball ball;
     int score = 0;
-    [SerializeField] TMP_Text scoreText, roundText;
+    [SerializeField] TMP_Text scoreText, roundText, finalScoreText;
     [SerializeField] int round = 1, maxRound = 5;
     [Space]
     [SerializeField] float resetDelay = 1.5f;
+    [Space]
+    [SerializeField] GameObject nextScreen;
 
     private void Awake()
     {
@@ -41,6 +43,8 @@ public class ScoreManager : MonoBehaviour
         {
             foreach (Pin p in pins) p.gameObject.SetActive(false);
             ball.GetGrab().enabled = false;
+            finalScoreText.text = $"Score: {score}";
+            nextScreen.SetActive(true);
             yield break;
         }
         ResetPins();
@@ -52,4 +56,5 @@ public class ScoreManager : MonoBehaviour
         score++;
         scoreText.text = $"Score: {score}";
     }
+    public int GetScore() { return score; }
 }
