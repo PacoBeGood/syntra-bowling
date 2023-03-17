@@ -5,16 +5,29 @@ using UnityEngine;
 public class Pin : MonoBehaviour
 {
     bool isHit = false;
+    Vector3 startPos, startRot;
+    Rigidbody rb;
 
-    public void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        // If it touches the scoreTrigger, manage pin-List and add score.
-        if (other.tag == "Goal" && !isHit)
-        {
-            isHit = true;
-            ScoreManager.instance.AddScore(this);
-        }
+        startPos = transform.position;
+        startRot = transform.localEulerAngles;
+        rb = GetComponent<Rigidbody>();
+    }
+
+    public void HitCollider()
+    {
+        isHit = true;
+        ScoreManager.instance.AddScore(this);
     }
 
     public bool CheckHit() { return isHit; }
+
+    public void ResetPin()
+    {
+        transform.position = startPos;
+        transform.localEulerAngles = startRot;
+        isHit = false;
+    }
+    public Rigidbody GetRigidBody() { return rb; }
 }
