@@ -31,7 +31,7 @@ public class Ball : MonoBehaviour
     }
     public void Reset()
     {
-        transform.position = startPos;
+         transform.position = startPos;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         grab.enabled = true;
